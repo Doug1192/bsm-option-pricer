@@ -174,6 +174,55 @@ st.markdown("""
     }
     .stButton > button:hover { opacity: .88 !important; }
     .stButton > button:active { transform: scale(.98) !important; }
+
+    /* ── Contact bar ── */
+    .contact-bar {
+        margin-top: 40px;
+        padding: 18px 24px;
+        background: linear-gradient(135deg, #1e1b4b 0%, #1e3a5f 100%);
+        border-radius: 12px;
+        border: 1px solid rgba(99,102,241,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    .contact-label {
+        font-size: 13px;
+        color: #a5b4fc;
+        font-weight: 500;
+        margin-right: 4px;
+    }
+    .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none !important;
+        transition: opacity .15s, transform .1s;
+        cursor: pointer;
+        border: none;
+    }
+    .contact-btn:hover { opacity: .85; transform: translateY(-1px); }
+    .contact-btn:active { transform: scale(.97); }
+    .btn-linkedin {
+        background: #0a66c2;
+        color: #ffffff !important;
+    }
+    .btn-email {
+        background: #4f46e5;
+        color: #ffffff !important;
+    }
+    .contact-divider {
+        width: 1px;
+        height: 28px;
+        background: rgba(165,180,252,0.2);
+    }
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -409,6 +458,38 @@ st.markdown("""
   </div>
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("""
+<div class="contact-bar">
+  <span class="contact-label">Connect with Doug Chingosho</span>
+  <div class="contact-divider"></div>
+  <a class="contact-btn btn-linkedin"
+     href="https://www.linkedin.com/in/douglas-chingosho"
+     target="_blank" rel="noopener noreferrer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853
+               0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9
+               1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337
+               7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782
+               13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0
+               1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24
+               22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+    LinkedIn
+  </a>
+  <a class="contact-btn btn-email"
+     href="mailto:douglas.chingosho@wustl.edu"
+     target="_blank" rel="noopener noreferrer">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="M2 7l10 7 10-7"/>
+    </svg>
+    Email
+  </a>
+</div>
+""", unsafe_allow_html=True)
+
 
 # ─────────────────────────────────────────────
 # UI — Sidebar inputs (the calculator)
@@ -687,3 +768,31 @@ else:
     | q | Continuous dividend yield (0 for non-dividend-paying stocks) |
     | σ | Annualised volatility of the underlying asset |
     """)
+
+# ─────────────────────────────────────────────
+# Footer
+# ─────────────────────────────────────────────
+st.markdown("""
+<div style="margin-top:48px; padding:20px 24px;
+            border-top: 1px solid rgba(99,102,241,0.2);
+            display:flex; align-items:center; justify-content:space-between;
+            flex-wrap:wrap; gap:12px;">
+  <div style="font-size:12px; color:#475569;">
+    Built by <span style="color:#a5b4fc; font-weight:600;">Doug Chingosho</span>
+    &nbsp;·&nbsp; MS Business Analytics, Olin Business School, WashU
+    &nbsp;·&nbsp; Fintech · Analytics · Data Insights
+  </div>
+  <div style="display:flex; gap:10px;">
+    <a href="https://www.linkedin.com/in/douglas-tawanda-chingosho"
+       target="_blank" rel="noopener noreferrer"
+       style="font-size:12px; color:#6366f1; text-decoration:none; font-weight:500;">
+      LinkedIn ↗
+    </a>
+    <span style="color:#334155;">·</span>
+    <a href="mailto:douglasc@wustl.edu"
+       style="font-size:12px; color:#6366f1; text-decoration:none; font-weight:500;">
+      Email ↗
+    </a>
+  </div>
+</div>
+""", unsafe_allow_html=True)
